@@ -2,10 +2,9 @@ import  random
 def JogoPalavras(palavras_sortear):
     palavra_escolhida = random.choice(palavras_sortear)
     tentativas = 6
-    desorganizada = random.sample(palavra_escolhida,len(palavra_escolhida))
-    desorganizada1 = "".join(desorganizada)
+    desorganizada = "".join(random.sample(palavra_escolhida,len(palavra_escolhida)))
     while True:
-        tentativa = input(f"Que palavra é essa? {desorganizada1}: ")
+        tentativa = input(f"Que palavra é essa? {desorganizada}: ")
         if tentativa != palavra_escolhida:
             print("Voce errou, tente novamente")
             tentativas = tentativas - 1
