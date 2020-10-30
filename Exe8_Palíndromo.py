@@ -7,3 +7,5 @@ def palindromo(frase):
 
 frase = input("Digite uma frase: ")
 palindromo(frase)
+
+print("O que é um para N, pra voce?")
