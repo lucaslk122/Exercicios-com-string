@@ -1,9 +1,28 @@
+import  random
+def JogoPalavras(palavras_sortear):
+    palavra_escolhida = random.choice(palavras_sortear)
+    tentativas = 6
+    desorganizada = random.sample(palavra_escolhida,len(palavra_escolhida))
+    desorganizada1 = "".join(desorganizada)
+    while True:
+        tentativa = input(f"Que palavra é essa? {desorganizada1}: ")
+        if tentativa != palavra_escolhida:
+            print("Voce errou, tente novamente")
+            tentativas = tentativas - 1
+            if tentativas == 0:
+                print("Voce perdeu, suas tentativas zeraram :( ")
+                break
+        else:
+            print("Voce acertou!")
+            break
+
 palavras_sortear = []
 print("Digite PARAR para parar de digitar as palavras")
 while True:
     palavras = str(input("Digite uma palavra: "))
-    if palavras != "parar" or palavras != "PARAR":
-        palavras_sortear.append(palavras)
-    else:
+    if palavras.lower() == "parar":
         break
-print(palavras_sortear)
+    else:
+        palavras_sortear.append(palavras)
+print("Voce tem 6 tentativas para acertar qual é a palavra que estara embaralhada!")
+JogoPalavras(palavras_sortear)
